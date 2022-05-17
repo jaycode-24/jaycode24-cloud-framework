@@ -9,6 +9,7 @@ import com.jaycode.framework.cloud.boot.starter.orm.injector.statement.anotation
 import com.jaycode.framework.cloud.boot.starter.orm.page.PaginationInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.plugin.Interceptor;
+import org.apache.ibatis.session.Configuration;
 import org.reflections.Reflections;
 import org.springframework.core.annotation.AnnotationAwareOrderComparator;
 
@@ -61,5 +62,10 @@ public class PluginInjector {
     public PluginInjector(){
         Reflections reflections = new Reflections(PluginInjector.class.getPackage().getName());
         this.sqlStatementSet = reflections.getTypesAnnotatedWith(SqlStatement.class);
+    }
+
+
+    public void inject(Configuration configuration, Class<?> repositoryClass) {
+        //todo
     }
 }

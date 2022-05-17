@@ -41,7 +41,11 @@ public class YamlConfig implements Config{
 
     @Override
     public <T> T getValue(String key, T defaultValue) {
-        return null;
+        T v = getValue(key);
+        if (v == null) {
+            return defaultValue;
+        }
+        return v;
     }
 
     @Override

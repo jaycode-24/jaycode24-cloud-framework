@@ -1,6 +1,7 @@
 package com.jaycode.framework.cloud.boot.core.config;
 
 import cn.hutool.core.util.StrUtil;
+import org.springframework.util.StringUtils;
 
 /**
  * 启动环境读取规则
@@ -32,6 +33,11 @@ public class BootstrapEnvironment {
         return StrUtil.isNotBlank(m) ? m : config.getValue(key);
     }
 
+    public String getString(String key, String defaultValue) {
+        String m = getEnv(key);
+        return StringUtils.hasLength(m) ? m : config.getValue(key, defaultValue);
+    }
+
     /**
      * 获取非配置变量
      * @param key
@@ -56,5 +62,10 @@ public class BootstrapEnvironment {
             }
         }
         return config.getBoolean(key);
+    }
+
+    public Integer getInteger(String key, Integer defaultValue) {
+        String m = getEnv(key);
+        return StringUtils.hasLength(m) ? Integer.valueOf(m) : config.getValue(key, defaultValue);
     }
 }

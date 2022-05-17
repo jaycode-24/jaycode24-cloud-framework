@@ -1,7 +1,12 @@
 package com.jaycode.framework.cloud.boot.starter.orm.ds.resource;
 
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -10,6 +15,7 @@ import java.util.Map;
  * @author cheng.wang
  * @date 2022/5/16
  */
+@Slf4j
 public class DataSourceRouteManager {
     //数据源路由缓存
     private static final Map<String, DataSourceGroup> DATA_SOURCE_GROUP_CACHE = new HashMap<>();
@@ -34,6 +40,23 @@ public class DataSourceRouteManager {
      * @param databaseRouteId 路由标识
      */
     public static void initIfNecessary(String databaseRouteId) {
-        if ()
+        if (ROUTE_CONFIG.hasRoute(databaseRouteId) && !DATA_SOURCE_GROUP_CACHE.containsKey(databaseRouteId)) {
+            Set<String> set = new HashSet<>();
+            set.add(databaseRouteId);
+            init(set);
+        }
+    }
+
+    private static void init(Set<String> appRequireRouteIds) {
+        log.info("初始化数据库路由[" + StringUtils.join(appRequireRouteIds, DEFAULT_SPLIT) + "]");
+        Map<String,String> appRequireRouteIdConfig = new HashMap<>();
+        for (String usingRouteId : appRequireRouteIds) {
+            if (ROUTE_CONFIG.hasRoute(usingRouteId)){
+                ROUTE_CONFIG.getRoute(usingRouteId)
+                        .forEach(appRequireRouteIdConfig::put);
+
+            }
+        }
+        ROUTE_CONFIG.
     }
 }

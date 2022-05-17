@@ -36,7 +36,6 @@ public class DataSourceFactory {
     }
 
     public DataSource prepareDynamicDataSource() {
-
         return DYNAMIC;
     }
 
