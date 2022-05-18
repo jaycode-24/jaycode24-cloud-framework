@@ -85,4 +85,13 @@ public class DataSourceRouteConfig {
         return new HashMap<>();
 
     }
+
+    public Map<String, Map<String, String>> getDataSourceJdbc() {
+        return config.getValue("datasource.dss");
+    }
+
+    public String getDynamicRouteId() {
+        return "dynamic";
+
+    }
 }

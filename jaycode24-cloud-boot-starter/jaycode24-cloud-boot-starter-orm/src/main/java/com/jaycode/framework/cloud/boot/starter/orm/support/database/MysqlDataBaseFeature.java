@@ -12,10 +12,10 @@ public class MysqlDataBaseFeature extends BaseDatabaseFeature{
         return "mysql";
     }
 
-    @Override
+    /*@Override
     public String getPageQuerySql(String sql, MybatisPagination page) {
         return sql + "limit" + page.getS;
-    }
+    }*/
 
     @Override
     public String getPageCountSql(String sql) {

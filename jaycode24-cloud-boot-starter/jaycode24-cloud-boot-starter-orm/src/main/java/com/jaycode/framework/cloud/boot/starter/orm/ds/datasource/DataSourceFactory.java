@@ -10,6 +10,7 @@ import com.jaycode.framework.cloud.boot.starter.orm.ds.route.DataSourceRoutingEx
 import lombok.extern.slf4j.Slf4j;
 
 import javax.sql.DataSource;
+import java.util.Set;
 
 /**
  * 数据源工厂，产生特定的数据源
@@ -37,6 +38,21 @@ public class DataSourceFactory {
 
     public DataSource prepareDynamicDataSource() {
         return DYNAMIC;
+    }
+
+
+    /**
+     * 根据应用使用到的路由信息，进行初始化操作
+     *
+     * @param usingDataRouteIds 应用使用到的路由
+     */
+    public void init(Set<String> usingDataRouteIds) {
+        DataSourceRouteManager.init(usingDataRouteIds);
+    }
+
+    public DataSource prepareNewDataSource(String route) {
+        return new BundleDataSource(route);
+
     }
 
     private static class DataSourceHolder{

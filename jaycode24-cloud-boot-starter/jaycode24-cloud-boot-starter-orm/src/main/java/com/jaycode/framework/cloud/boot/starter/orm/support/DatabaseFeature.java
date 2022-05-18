@@ -10,7 +10,7 @@ public interface DatabaseFeature {
 
     String getValidationQuerySql();
 
-    String getPageQuerySql(String sql, MybatisPagination mybatisPagination);
+    //String getPageQuerySql(String sql, MybatisPagination mybatisPagination);
 
     String getPageCountSql(String sql);
 

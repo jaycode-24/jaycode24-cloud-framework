@@ -62,7 +62,7 @@ public class TransactionManager {
 
     }
 
-    private static boolean usingJta() {
+    public static boolean usingJta() {
         return enableJta;
     }
 }

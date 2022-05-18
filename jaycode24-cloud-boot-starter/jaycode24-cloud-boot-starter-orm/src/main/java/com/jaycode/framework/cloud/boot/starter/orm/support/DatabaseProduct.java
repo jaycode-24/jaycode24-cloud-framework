@@ -1,9 +1,14 @@
 package com.jaycode.framework.cloud.boot.starter.orm.support;
 
+import com.jaycode.framework.cloud.boot.starter.orm.support.database.DmDatabaseFeature;
+import com.jaycode.framework.cloud.boot.starter.orm.support.database.MysqlDataBaseFeature;
+import com.jaycode.framework.cloud.boot.starter.orm.support.database.OracleDatabaseFeature;
 import com.sun.deploy.uitoolkit.ui.ConsoleController;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Connection;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -13,6 +18,18 @@ import java.util.Map;
 @Slf4j
 public class DatabaseProduct {
     private static final DatabaseFeature DEFAULT = new MysqlDataBaseFeature();
+
+    private static final Map<String, DatabaseFeature> REGISTRY = new HashMap<>();
+
+    static {
+        Arrays.asList(new DatabaseFeature[]{
+                new MysqlDataBaseFeature(),
+                new OracleDatabaseFeature(),
+                new DmDatabaseFeature()
+        }).forEach(d -> {
+            REGISTRY.put(d.getProductName(),d);
+        });
+    }
 
     public static DatabaseFeature getFeature(Connection connection) {
         try {
