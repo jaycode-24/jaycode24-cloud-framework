@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_funi-cloud-boot-starter-fileupload" default="compile.module.funi-cloud-boot-starter-fileupload">
+    <dirname property="module.funi-cloud-boot-starter-fileupload.basedir"
+             file="${ant.file.module_funi-cloud-boot-starter-fileupload}"/>
+
+    <property name="module.jdk.home.funi-cloud-boot-starter-fileupload" value="${project.jdk.home}"/>
+    <property name="module.jdk.bin.funi-cloud-boot-starter-fileupload" value="${project.jdk.bin}"/>
+    <property name="module.jdk.classpath.funi-cloud-boot-starter-fileupload" value="${project.jdk.classpath}"/>
+
+    <property name="compiler.args.funi-cloud-boot-starter-fileupload"
+              value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+
+    <property name="funi-cloud-boot-starter-fileupload.output.dir"
+              value="${module.funi-cloud-boot-starter-fileupload.basedir}/target/classes"/>
+    <property name="funi-cloud-boot-starter-fileupload.testoutput.dir"
+              value="${module.funi-cloud-boot-starter-fileupload.basedir}/target/test-classes"/>
+
+    <path id="funi-cloud-boot-starter-fileupload.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <path id="funi-cloud-boot-starter-fileupload.module.production.classpath">
+        <path refid="${module.jdk.classpath.funi-cloud-boot-starter-fileupload}"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-web:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:2.1.7.release.classpath"/>
+        <path refid="library.maven:_ch.qos.logback:logback-classic:1.2.3.classpath"/>
+        <path refid="library.maven:_ch.qos.logback:logback-core:1.2.3.classpath"/>
+        <path refid="library.maven:_org.slf4j:slf4j-api:1.7.26.classpath"/>
+        <path refid="library.maven:_org.apache.logging.log4j:log4j-to-slf4j:2.11.2.classpath"/>
+        <path refid="library.maven:_org.apache.logging.log4j:log4j-api:2.11.2.classpath"/>
+        <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.26.classpath"/>
+        <path refid="library.maven:_javax.annotation:javax.annotation-api:1.3.2.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-core:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-jcl:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-json:2.1.7.release.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.9.0.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.9.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-tomcat:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-core:9.0.22.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-el:9.0.22.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-websocket:9.0.22.classpath"/>
+        <path refid="library.maven:_org.hibernate.validator:hibernate-validator:6.0.17.final.classpath"/>
+        <path refid="library.maven:_javax.validation:validation-api:2.0.1.final.classpath"/>
+        <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.2.final.classpath"/>
+        <path refid="library.maven:_com.fasterxml:classmate:1.4.0.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-web:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-beans:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-webmvc:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-aop:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-context:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-expression:5.1.9.release.classpath"/>
+        <path refid="library.maven:_com.funi.framework:funi-upload:1.0.0.classpath"/>
+        <path refid="library.maven:_org.csource.common:fastdfs-driver:5.0.6-snapshot.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-alibaba-nacos-config:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-alibaba-nacos-config:0.2.1.release.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-client:0.6.2.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-common:0.6.2.classpath"/>
+        <path refid="library.maven:_commons-io:commons-io:2.2.classpath"/>
+        <path refid="library.maven:_org.apache.commons:commons-lang3:3.7.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-api:0.6.2.classpath"/>
+        <path refid="library.maven:_com.alibaba:fastjson:1.2.46.classpath"/>
+        <path refid="library.maven:_com.google.guava:guava:21.0.classpath"/>
+        <path refid="library.maven:_commons-codec:commons-codec:1.11.classpath"/>
+        <path refid="library.maven:_org.codehaus.jackson:jackson-mapper-lgpl:1.9.6.classpath"/>
+        <path refid="library.maven:_org.codehaus.jackson:jackson-core-lgpl:1.9.6.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-commons:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.security:spring-security-crypto:5.1.6.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-context:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-alibaba-nacos-discovery:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-alibaba-nacos-discovery:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.security:spring-security-rsa:1.0.7.release.classpath"/>
+        <path refid="library.maven:_org.bouncycastle:bcpkix-jdk15on:1.60.classpath"/>
+        <path refid="library.maven:_org.bouncycastle:bcprov-jdk15on:1.60.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-netflix-ribbon:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-netflix-archaius:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-netflix-archaius:2.1.2.release.classpath"/>
+        <path refid="library.maven:_com.netflix.archaius:archaius-core:0.7.6.classpath"/>
+        <path refid="library.maven:_commons-configuration:commons-configuration:1.8.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon:2.3.0.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-core:2.3.0.classpath"/>
+        <path refid="library.maven:_commons-lang:commons-lang:2.6.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-httpclient:2.3.0.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-loadbalancer:2.3.0.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxjava:1.3.8.classpath"/>
+        <path refid="library.maven:_org.projectlombok:lombok:1.16.8.classpath"/>
+    </path>
+
+    <path id="funi-cloud-boot-starter-fileupload.runtime.production.module.classpath">
+        <pathelement location="${funi-cloud-boot-starter-fileupload.output.dir}"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-web:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:2.1.7.release.classpath"/>
+        <path refid="library.maven:_ch.qos.logback:logback-classic:1.2.3.classpath"/>
+        <path refid="library.maven:_ch.qos.logback:logback-core:1.2.3.classpath"/>
+        <path refid="library.maven:_org.slf4j:slf4j-api:1.7.26.classpath"/>
+        <path refid="library.maven:_org.apache.logging.log4j:log4j-to-slf4j:2.11.2.classpath"/>
+        <path refid="library.maven:_org.apache.logging.log4j:log4j-api:2.11.2.classpath"/>
+        <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.26.classpath"/>
+        <path refid="library.maven:_javax.annotation:javax.annotation-api:1.3.2.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-core:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-jcl:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.yaml:snakeyaml:1.23.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-json:2.1.7.release.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.9.0.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.9.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-tomcat:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-core:9.0.22.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-el:9.0.22.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-websocket:9.0.22.classpath"/>
+        <path refid="library.maven:_org.hibernate.validator:hibernate-validator:6.0.17.final.classpath"/>
+        <path refid="library.maven:_javax.validation:validation-api:2.0.1.final.classpath"/>
+        <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.2.final.classpath"/>
+        <path refid="library.maven:_com.fasterxml:classmate:1.4.0.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-web:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-beans:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-webmvc:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-aop:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-context:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-expression:5.1.9.release.classpath"/>
+        <path refid="library.maven:_com.funi.framework:funi-upload:1.0.0.classpath"/>
+        <path refid="library.maven:_org.csource.common:fastdfs-driver:5.0.6-snapshot.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-alibaba-nacos-config:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-alibaba-nacos-config:0.2.1.release.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-client:0.6.2.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-common:0.6.2.classpath"/>
+        <path refid="library.maven:_commons-io:commons-io:2.2.classpath"/>
+        <path refid="library.maven:_org.apache.commons:commons-lang3:3.7.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-api:0.6.2.classpath"/>
+        <path refid="library.maven:_com.alibaba:fastjson:1.2.46.classpath"/>
+        <path refid="library.maven:_com.google.guava:guava:21.0.classpath"/>
+        <path refid="library.maven:_commons-codec:commons-codec:1.11.classpath"/>
+        <path refid="library.maven:_org.codehaus.jackson:jackson-mapper-lgpl:1.9.6.classpath"/>
+        <path refid="library.maven:_org.codehaus.jackson:jackson-core-lgpl:1.9.6.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-commons:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.security:spring-security-crypto:5.1.6.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-context:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-alibaba-nacos-discovery:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-alibaba-nacos-discovery:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.security:spring-security-rsa:1.0.7.release.classpath"/>
+        <path refid="library.maven:_org.bouncycastle:bcpkix-jdk15on:1.60.classpath"/>
+        <path refid="library.maven:_org.bouncycastle:bcprov-jdk15on:1.60.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-netflix-ribbon:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-netflix-archaius:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-netflix-archaius:2.1.2.release.classpath"/>
+        <path refid="library.maven:_com.netflix.archaius:archaius-core:0.7.6.classpath"/>
+        <path refid="library.maven:_com.google.code.findbugs:jsr305:3.0.1.classpath"/>
+        <path refid="library.maven:_commons-configuration:commons-configuration:1.8.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon:2.3.0.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-transport:2.3.0.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxnetty-contexts:0.4.9.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxnetty-servo:0.4.9.classpath"/>
+        <path refid="library.maven:_com.netflix.hystrix:hystrix-core:1.5.18.classpath"/>
+        <path refid="library.maven:_org.hdrhistogram:hdrhistogram:2.1.9.classpath"/>
+        <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxnetty:0.4.9.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-core:2.3.0.classpath"/>
+        <path refid="library.maven:_commons-lang:commons-lang:2.6.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-httpclient:2.3.0.classpath"/>
+        <path refid="library.maven:_commons-collections:commons-collections:3.2.2.classpath"/>
+        <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.5.9.classpath"/>
+        <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.4.11.classpath"/>
+        <path refid="library.maven:_com.sun.jersey:jersey-client:1.19.1.classpath"/>
+        <path refid="library.maven:_com.sun.jersey:jersey-core:1.19.1.classpath"/>
+        <path refid="library.maven:_javax.ws.rs:jsr311-api:1.1.1.classpath"/>
+        <path refid="library.maven:_com.sun.jersey.contribs:jersey-apache-client4:1.19.1.classpath"/>
+        <path refid="library.maven:_com.netflix.servo:servo-core:0.12.21.classpath"/>
+        <path refid="library.maven:_com.netflix.netflix-commons:netflix-commons-util:0.3.0.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-loadbalancer:2.3.0.classpath"/>
+        <path refid="library.maven:_com.netflix.netflix-commons:netflix-statistics:0.1.1.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxjava:1.3.8.classpath"/>
+        <path refid="library.maven:_org.projectlombok:lombok:1.16.8.classpath"/>
+    </path>
+
+    <path id="funi-cloud-boot-starter-fileupload.module.classpath">
+        <path refid="${module.jdk.classpath.funi-cloud-boot-starter-fileupload}"/>
+        <pathelement location="${funi-cloud-boot-starter-fileupload.output.dir}"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-web:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:2.1.7.release.classpath"/>
+        <path refid="library.maven:_ch.qos.logback:logback-classic:1.2.3.classpath"/>
+        <path refid="library.maven:_ch.qos.logback:logback-core:1.2.3.classpath"/>
+        <path refid="library.maven:_org.slf4j:slf4j-api:1.7.26.classpath"/>
+        <path refid="library.maven:_org.apache.logging.log4j:log4j-to-slf4j:2.11.2.classpath"/>
+        <path refid="library.maven:_org.apache.logging.log4j:log4j-api:2.11.2.classpath"/>
+        <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.26.classpath"/>
+        <path refid="library.maven:_javax.annotation:javax.annotation-api:1.3.2.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-core:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-jcl:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.yaml:snakeyaml:1.23.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-json:2.1.7.release.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.9.0.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.9.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-tomcat:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-core:9.0.22.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-el:9.0.22.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-websocket:9.0.22.classpath"/>
+        <path refid="library.maven:_org.hibernate.validator:hibernate-validator:6.0.17.final.classpath"/>
+        <path refid="library.maven:_javax.validation:validation-api:2.0.1.final.classpath"/>
+        <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.2.final.classpath"/>
+        <path refid="library.maven:_com.fasterxml:classmate:1.4.0.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-web:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-beans:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-webmvc:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-aop:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-context:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-expression:5.1.9.release.classpath"/>
+        <path refid="library.maven:_com.funi.framework:funi-upload:1.0.0.classpath"/>
+        <path refid="library.maven:_org.csource.common:fastdfs-driver:5.0.6-snapshot.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-alibaba-nacos-config:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-alibaba-nacos-config:0.2.1.release.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-client:0.6.2.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-common:0.6.2.classpath"/>
+        <path refid="library.maven:_commons-io:commons-io:2.2.classpath"/>
+        <path refid="library.maven:_org.apache.commons:commons-lang3:3.7.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-api:0.6.2.classpath"/>
+        <path refid="library.maven:_com.alibaba:fastjson:1.2.46.classpath"/>
+        <path refid="library.maven:_com.google.guava:guava:21.0.classpath"/>
+        <path refid="library.maven:_commons-codec:commons-codec:1.11.classpath"/>
+        <path refid="library.maven:_org.codehaus.jackson:jackson-mapper-lgpl:1.9.6.classpath"/>
+        <path refid="library.maven:_org.codehaus.jackson:jackson-core-lgpl:1.9.6.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-commons:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.security:spring-security-crypto:5.1.6.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-context:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-alibaba-nacos-discovery:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-alibaba-nacos-discovery:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.security:spring-security-rsa:1.0.7.release.classpath"/>
+        <path refid="library.maven:_org.bouncycastle:bcpkix-jdk15on:1.60.classpath"/>
+        <path refid="library.maven:_org.bouncycastle:bcprov-jdk15on:1.60.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-netflix-ribbon:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-netflix-archaius:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-netflix-archaius:2.1.2.release.classpath"/>
+        <path refid="library.maven:_com.netflix.archaius:archaius-core:0.7.6.classpath"/>
+        <path refid="library.maven:_com.google.code.findbugs:jsr305:3.0.1.classpath"/>
+        <path refid="library.maven:_commons-configuration:commons-configuration:1.8.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon:2.3.0.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-transport:2.3.0.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxnetty-contexts:0.4.9.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxnetty-servo:0.4.9.classpath"/>
+        <path refid="library.maven:_com.netflix.hystrix:hystrix-core:1.5.18.classpath"/>
+        <path refid="library.maven:_org.hdrhistogram:hdrhistogram:2.1.9.classpath"/>
+        <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxnetty:0.4.9.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-core:2.3.0.classpath"/>
+        <path refid="library.maven:_commons-lang:commons-lang:2.6.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-httpclient:2.3.0.classpath"/>
+        <path refid="library.maven:_commons-collections:commons-collections:3.2.2.classpath"/>
+        <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.5.9.classpath"/>
+        <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.4.11.classpath"/>
+        <path refid="library.maven:_com.sun.jersey:jersey-client:1.19.1.classpath"/>
+        <path refid="library.maven:_com.sun.jersey:jersey-core:1.19.1.classpath"/>
+        <path refid="library.maven:_javax.ws.rs:jsr311-api:1.1.1.classpath"/>
+        <path refid="library.maven:_com.sun.jersey.contribs:jersey-apache-client4:1.19.1.classpath"/>
+        <path refid="library.maven:_com.netflix.servo:servo-core:0.12.21.classpath"/>
+        <path refid="library.maven:_com.netflix.netflix-commons:netflix-commons-util:0.3.0.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-loadbalancer:2.3.0.classpath"/>
+        <path refid="library.maven:_com.netflix.netflix-commons:netflix-statistics:0.1.1.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxjava:1.3.8.classpath"/>
+        <path refid="library.maven:_org.projectlombok:lombok:1.16.8.classpath"/>
+    </path>
+
+    <path id="funi-cloud-boot-starter-fileupload.runtime.module.classpath">
+        <pathelement location="${funi-cloud-boot-starter-fileupload.testoutput.dir}"/>
+        <pathelement location="${funi-cloud-boot-starter-fileupload.output.dir}"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-web:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:2.1.7.release.classpath"/>
+        <path refid="library.maven:_ch.qos.logback:logback-classic:1.2.3.classpath"/>
+        <path refid="library.maven:_ch.qos.logback:logback-core:1.2.3.classpath"/>
+        <path refid="library.maven:_org.slf4j:slf4j-api:1.7.26.classpath"/>
+        <path refid="library.maven:_org.apache.logging.log4j:log4j-to-slf4j:2.11.2.classpath"/>
+        <path refid="library.maven:_org.apache.logging.log4j:log4j-api:2.11.2.classpath"/>
+        <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.26.classpath"/>
+        <path refid="library.maven:_javax.annotation:javax.annotation-api:1.3.2.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-core:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-jcl:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.yaml:snakeyaml:1.23.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-json:2.1.7.release.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.9.0.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.9.classpath"/>
+        <path refid="library.maven:_com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.9.classpath"/>
+        <path refid="library.maven:_org.springframework.boot:spring-boot-starter-tomcat:2.1.7.release.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-core:9.0.22.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-el:9.0.22.classpath"/>
+        <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-websocket:9.0.22.classpath"/>
+        <path refid="library.maven:_org.hibernate.validator:hibernate-validator:6.0.17.final.classpath"/>
+        <path refid="library.maven:_javax.validation:validation-api:2.0.1.final.classpath"/>
+        <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.2.final.classpath"/>
+        <path refid="library.maven:_com.fasterxml:classmate:1.4.0.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-web:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-beans:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-webmvc:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-aop:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-context:5.1.9.release.classpath"/>
+        <path refid="library.maven:_org.springframework:spring-expression:5.1.9.release.classpath"/>
+        <path refid="library.maven:_com.funi.framework:funi-upload:1.0.0.classpath"/>
+        <path refid="library.maven:_org.csource.common:fastdfs-driver:5.0.6-snapshot.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-alibaba-nacos-config:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-alibaba-nacos-config:0.2.1.release.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-client:0.6.2.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-common:0.6.2.classpath"/>
+        <path refid="library.maven:_commons-io:commons-io:2.2.classpath"/>
+        <path refid="library.maven:_org.apache.commons:commons-lang3:3.7.classpath"/>
+        <path refid="library.maven:_com.alibaba.nacos:nacos-api:0.6.2.classpath"/>
+        <path refid="library.maven:_com.alibaba:fastjson:1.2.46.classpath"/>
+        <path refid="library.maven:_com.google.guava:guava:21.0.classpath"/>
+        <path refid="library.maven:_commons-codec:commons-codec:1.11.classpath"/>
+        <path refid="library.maven:_org.codehaus.jackson:jackson-mapper-lgpl:1.9.6.classpath"/>
+        <path refid="library.maven:_org.codehaus.jackson:jackson-core-lgpl:1.9.6.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-commons:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.security:spring-security-crypto:5.1.6.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-context:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-alibaba-nacos-discovery:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-alibaba-nacos-discovery:0.2.1.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.security:spring-security-rsa:1.0.7.release.classpath"/>
+        <path refid="library.maven:_org.bouncycastle:bcpkix-jdk15on:1.60.classpath"/>
+        <path refid="library.maven:_org.bouncycastle:bcprov-jdk15on:1.60.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-netflix-ribbon:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-netflix-archaius:2.1.2.release.classpath"/>
+        <path refid="library.maven:_org.springframework.cloud:spring-cloud-starter-netflix-archaius:2.1.2.release.classpath"/>
+        <path refid="library.maven:_com.netflix.archaius:archaius-core:0.7.6.classpath"/>
+        <path refid="library.maven:_com.google.code.findbugs:jsr305:3.0.1.classpath"/>
+        <path refid="library.maven:_commons-configuration:commons-configuration:1.8.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon:2.3.0.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-transport:2.3.0.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxnetty-contexts:0.4.9.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxnetty-servo:0.4.9.classpath"/>
+        <path refid="library.maven:_com.netflix.hystrix:hystrix-core:1.5.18.classpath"/>
+        <path refid="library.maven:_org.hdrhistogram:hdrhistogram:2.1.9.classpath"/>
+        <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxnetty:0.4.9.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-core:2.3.0.classpath"/>
+        <path refid="library.maven:_commons-lang:commons-lang:2.6.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-httpclient:2.3.0.classpath"/>
+        <path refid="library.maven:_commons-collections:commons-collections:3.2.2.classpath"/>
+        <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.5.9.classpath"/>
+        <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.4.11.classpath"/>
+        <path refid="library.maven:_com.sun.jersey:jersey-client:1.19.1.classpath"/>
+        <path refid="library.maven:_com.sun.jersey:jersey-core:1.19.1.classpath"/>
+        <path refid="library.maven:_javax.ws.rs:jsr311-api:1.1.1.classpath"/>
+        <path refid="library.maven:_com.sun.jersey.contribs:jersey-apache-client4:1.19.1.classpath"/>
+        <path refid="library.maven:_com.netflix.servo:servo-core:0.12.21.classpath"/>
+        <path refid="library.maven:_com.netflix.netflix-commons:netflix-commons-util:0.3.0.classpath"/>
+        <path refid="library.maven:_com.netflix.ribbon:ribbon-loadbalancer:2.3.0.classpath"/>
+        <path refid="library.maven:_com.netflix.netflix-commons:netflix-statistics:0.1.1.classpath"/>
+        <path refid="library.maven:_io.reactivex:rxjava:1.3.8.classpath"/>
+        <path refid="library.maven:_org.projectlombok:lombok:1.16.8.classpath"/>
+    </path>
+
+
+    <patternset id="excluded.from.module.funi-cloud-boot-starter-fileupload">
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <patternset id="excluded.from.compilation.funi-cloud-boot-starter-fileupload">
+        <patternset refid="excluded.from.module.funi-cloud-boot-starter-fileupload"/>
+    </patternset>
+
+    <path id="funi-cloud-boot-starter-fileupload.module.sourcepath">
+        <dirset dir="${module.funi-cloud-boot-starter-fileupload.basedir}">
+            <include name="src/main/java"/>
+            <include name="src/main/resources"/>
+        </dirset>
+    </path>
+
+    <path id="funi-cloud-boot-starter-fileupload.module.test.sourcepath">
+        <dirset dir="${module.funi-cloud-boot-starter-fileupload.basedir}">
+            <include name="src/test/java"/>
+        </dirset>
+    </path>
+
+
+    <target name="compile.module.funi-cloud-boot-starter-fileupload"
+            depends="compile.module.funi-cloud-boot-starter-fileupload.production,compile.module.funi-cloud-boot-starter-fileupload.tests"
+            description="Compile module funi-cloud-boot-starter-fileupload"/>
+
+    <target name="compile.module.funi-cloud-boot-starter-fileupload.production" depends="register.custom.compilers"
+            description="Compile module funi-cloud-boot-starter-fileupload; production classes">
+        <mkdir dir="${funi-cloud-boot-starter-fileupload.output.dir}"/>
+        <javac2 destdir="${funi-cloud-boot-starter-fileupload.output.dir}" debug="${compiler.debug}"
+                nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true"
+                executable="${module.jdk.bin.funi-cloud-boot-starter-fileupload}/javac">
+            <compilerarg line="${compiler.args.funi-cloud-boot-starter-fileupload}"/>
+            <bootclasspath refid="funi-cloud-boot-starter-fileupload.module.bootclasspath"/>
+            <classpath refid="funi-cloud-boot-starter-fileupload.module.production.classpath"/>
+            <src refid="funi-cloud-boot-starter-fileupload.module.sourcepath"/>
+            <patternset refid="excluded.from.compilation.funi-cloud-boot-starter-fileupload"/>
+        </javac2>
+
+        <copy todir="${funi-cloud-boot-starter-fileupload.output.dir}">
+            <fileset dir="${module.funi-cloud-boot-starter-fileupload.basedir}/src/main/java">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+            <fileset dir="${module.funi-cloud-boot-starter-fileupload.basedir}/src/main/resources">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile.module.funi-cloud-boot-starter-fileupload.tests"
+            depends="register.custom.compilers,compile.module.funi-cloud-boot-starter-fileupload.production"
+            description="compile module funi-cloud-boot-starter-fileupload; test classes" unless="skip.tests">
+        <mkdir dir="${funi-cloud-boot-starter-fileupload.testoutput.dir}"/>
+        <javac2 destdir="${funi-cloud-boot-starter-fileupload.testoutput.dir}" debug="${compiler.debug}"
+                nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true"
+                executable="${module.jdk.bin.funi-cloud-boot-starter-fileupload}/javac">
+            <compilerarg line="${compiler.args.funi-cloud-boot-starter-fileupload}"/>
+            <bootclasspath refid="funi-cloud-boot-starter-fileupload.module.bootclasspath"/>
+            <classpath refid="funi-cloud-boot-starter-fileupload.module.classpath"/>
+            <src refid="funi-cloud-boot-starter-fileupload.module.test.sourcepath"/>
+            <patternset refid="excluded.from.compilation.funi-cloud-boot-starter-fileupload"/>
+        </javac2>
+
+        <copy todir="${funi-cloud-boot-starter-fileupload.testoutput.dir}">
+            <fileset dir="${module.funi-cloud-boot-starter-fileupload.basedir}/src/test/java">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="clean.module.funi-cloud-boot-starter-fileupload" description="cleanup module">
+        <delete dir="${funi-cloud-boot-starter-fileupload.output.dir}"/>
+        <delete dir="${funi-cloud-boot-starter-fileupload.testoutput.dir}"/>
+    </target>
+</project>

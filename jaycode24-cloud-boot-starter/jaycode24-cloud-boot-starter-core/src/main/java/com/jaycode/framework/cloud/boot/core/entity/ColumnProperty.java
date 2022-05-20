@@ -1,6 +1,6 @@
 package com.jaycode.framework.cloud.boot.core.entity;
 
-import com.funi.framework.cloud.boot.core.classmeta.FieldDecorate;
+import com.jaycode.framework.cloud.boot.core.classmeta.FieldDecorate;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.Column;

@@ -150,6 +150,13 @@ public class CustomClassPathMapperScanner extends ClassPathMapperScanner {
         return configuration;
     }
 
+    /**
+     * 创建SqlSessionFactory 对象
+     * @param dataSource
+     * @param configuration
+     * @return
+     * @throws Exception
+     */
     public SqlSessionFactory createSqlSessionFactory(DataSource dataSource, Configuration configuration) throws Exception {
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
         factory.setDataSource(dataSource);

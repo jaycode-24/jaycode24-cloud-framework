@@ -1,10 +1,10 @@
 package com.jaycode.framework.cloud.boot.starter.orm.injector.statement;
 
-import com.funi.framework.cloud.boot.core.entity.ColumnProperty;
-import com.funi.framework.cloud.boot.core.entity.EntityMeta;
-import com.funi.framework.cloud.boot.starter.orm.injector.SqlTemplate;
-import com.funi.framework.cloud.boot.starter.orm.injector.metadata.Model;
-import com.funi.framework.cloud.boot.starter.orm.injector.statement.anotation.SqlStatement;
+import com.jaycode.framework.cloud.boot.core.entity.ColumnProperty;
+import com.jaycode.framework.cloud.boot.core.entity.EntityMeta;
+import com.jaycode.framework.cloud.boot.starter.orm.injector.SqlTemplate;
+import com.jaycode.framework.cloud.boot.starter.orm.injector.metadata.Model;
+import com.jaycode.framework.cloud.boot.starter.orm.injector.statement.anotation.SqlStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
 
 import java.util.List;

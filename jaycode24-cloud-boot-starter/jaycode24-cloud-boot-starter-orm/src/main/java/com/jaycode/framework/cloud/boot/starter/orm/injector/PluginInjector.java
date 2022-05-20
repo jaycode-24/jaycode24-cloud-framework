@@ -78,7 +78,7 @@ public class PluginInjector {
     }
 
 
-    public void inject(Configuration configuration, Class<?> repositoryClass) {
+    public void inject(Configuration configuration, Class<?> repositoryClass) throws Exception{
         //注入插件
         interceptorList.forEach(configuration::addInterceptor);
         //this.repositoryClass = repositoryClass;

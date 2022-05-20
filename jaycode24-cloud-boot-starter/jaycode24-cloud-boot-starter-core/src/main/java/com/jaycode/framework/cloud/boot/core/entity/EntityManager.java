@@ -1,7 +1,7 @@
 package com.jaycode.framework.cloud.boot.core.entity;
 
-import com.funi.framework.cloud.boot.core.CloudFrameworkException;
-import com.funi.framework.cloud.boot.core.entity.persistence.PreArchived;
+import com.jaycode.framework.cloud.boot.core.CloudFrameworkException;
+import com.jaycode.framework.cloud.boot.core.entity.persistence.PreArchived;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.PrePersist;

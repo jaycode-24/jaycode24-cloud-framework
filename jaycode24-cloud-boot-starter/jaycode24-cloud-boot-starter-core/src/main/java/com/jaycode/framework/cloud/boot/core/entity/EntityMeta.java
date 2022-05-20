@@ -1,12 +1,12 @@
 package com.jaycode.framework.cloud.boot.core.entity;
 
-import com.funi.framework.cloud.boot.core.classmeta.ClassMeta;
-import com.funi.framework.cloud.boot.core.classmeta.ObjectAccessor;
-import com.funi.framework.cloud.boot.core.entity.persistence.Archived;
-import com.funi.framework.cloud.boot.core.entity.persistence.EntitySchema;
-import com.funi.framework.cloud.boot.core.entity.persistence.PreArchived;
-import com.funi.framework.cloud.boot.core.support.EntityUtils;
-import com.funi.framework.cloud.boot.core.support.StringUtils;
+import com.jaycode.framework.cloud.boot.core.classmeta.ClassMeta;
+import com.jaycode.framework.cloud.boot.core.classmeta.ObjectAccessor;
+import com.jaycode.framework.cloud.boot.core.entity.persistence.Archived;
+import com.jaycode.framework.cloud.boot.core.entity.persistence.EntitySchema;
+import com.jaycode.framework.cloud.boot.core.entity.persistence.PreArchived;
+import com.jaycode.framework.cloud.boot.core.support.EntityUtils;
+import com.jaycode.framework.cloud.boot.core.support.StringUtils;
 
 import javax.persistence.*;
 import java.lang.annotation.Annotation;
@@ -181,7 +181,7 @@ public class EntityMeta {
 
     public String getTableName() {
         Entity entity = modelClass.getAnnotation(Entity.class);
-        if (entity != null && com.funi.framework.cloud.boot.core.support.StringUtils.hasLength(entity.name())) {
+        if (entity != null && com.jaycode.framework.cloud.boot.core.support.StringUtils.hasLength(entity.name())) {
             return entity.name();
         }
 

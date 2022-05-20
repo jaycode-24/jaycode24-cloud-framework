@@ -1,6 +1,6 @@
 package com.jaycode.framework.cloud.boot.core.entity.persistence;
 
-import com.funi.framework.cloud.boot.core.entity.IdGenerateStrategy;
+import com.jaycode.framework.cloud.boot.core.entity.IdGenerateStrategy;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
